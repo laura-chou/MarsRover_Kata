@@ -21,6 +21,10 @@ namespace MarsRoverKata.src
                 {
                     y++;
                 }
+                if (c == 'R')
+                {
+                    position = "E";
+                }
             }
             
             return $"{x}:{y}:{position}";
