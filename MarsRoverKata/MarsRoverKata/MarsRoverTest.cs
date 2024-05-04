@@ -20,6 +20,11 @@ namespace MarsRoverKata
         [TestCase("MMM", "0:3:N")]
         public void A01_GoStraight(string commands, string position)
         {
+            AssertResultShouldReturn(commands, position);
+        }
+
+        private void AssertResultShouldReturn(string commands, string position)
+        {
             var actual = _marsRover.Execute(commands);
             actual.Should().Be(position);
         }
