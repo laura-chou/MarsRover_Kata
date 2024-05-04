@@ -10,7 +10,20 @@ namespace MarsRoverKata.src
     {
         public string Execute(string commands)
         {
-            return "0:1:N";
+            var charArr = commands.ToCharArray();
+            var x = 0;
+            var y = 0;
+            var position = "N";
+            
+            foreach (char c in charArr)
+            {
+                if (c == 'M')
+                {
+                    y++;
+                }
+            }
+            
+            return $"{x}:{y}:{position}";
         }
     }
 }
