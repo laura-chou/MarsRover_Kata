@@ -20,14 +20,22 @@ namespace MarsRoverKata.src
             {
                 if (c == 'M')
                 {
-                    y++;
+                    if (position == 1)
+                    {
+                        x++;
+                    } 
+                    else
+                    {
+                        y++;
+                    }
                 }
                 if (c == 'R')
                 {
                     if (position + 1 == directions.Length)
                     {
                        position = 0;
-                    } else
+                    }
+                    else
                     {
                        position++;
                     }
