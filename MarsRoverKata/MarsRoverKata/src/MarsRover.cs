@@ -40,6 +40,10 @@ namespace MarsRoverKata.src
                        position++;
                     }
                 }
+                if (c == 'L')
+                {
+                    position = 3;
+                }
             }
             
             return $"{x}:{y}:{directions[position]}";
