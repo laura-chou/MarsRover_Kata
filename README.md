@@ -34,5 +34,6 @@
 ### End Of The Grid
 | commands | position |
 | :----: | :----: |
-| MMMMMMMMRM | 1:9:E |
-| RMMMMMMMMMLM | 9:1:N |
+| MMMMMMMMMMRM | 1:9:E |
+| RMMMMMMMMMMLM | 9:1:N |
+| MMMMMMLM | 0:6:W |
