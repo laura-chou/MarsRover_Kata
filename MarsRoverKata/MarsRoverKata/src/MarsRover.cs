@@ -42,7 +42,14 @@ namespace MarsRoverKata.src
                 }
                 if (c == 'L')
                 {
-                    position = 3;
+                    if (position == 0)
+                    {
+                        position = 3;
+                    }
+                    else
+                    {
+                        position--;
+                    }
                 }
             }
             
