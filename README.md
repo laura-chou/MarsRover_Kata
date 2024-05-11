@@ -29,7 +29,7 @@
 | LLL | 0:0:E |
 | LLLL | 0:0:N |
 | RMMMLM | 3:1:N |
-| MRMMMMLMMMML | 4:5:E |
+| MRMMMMLMMMML | 4:5:W |
 
 ### End Of The Grid
 | commands | position |
