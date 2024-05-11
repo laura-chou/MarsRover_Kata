@@ -19,7 +19,7 @@
 | RRR | 0:0:W |
 | RRRR | 0:0:N |
 | MMMRM | 1:3:E |
-| MMMMRMMM | 2:4:E |
+| MMMMRMMM | 3:4:E |
 
 #### Turn Left
 | commands | position |
