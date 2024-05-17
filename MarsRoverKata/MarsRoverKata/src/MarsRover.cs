@@ -23,9 +23,10 @@ namespace MarsRoverKata.src
                     if (x != 9 && position == 1)
                     {
                         x++;
-                    } else
+                    } 
+                    else
                     {
-                        if (y != 9)
+                        if (y != 9 && position == 0)
                         {
                             y++;
                         }
