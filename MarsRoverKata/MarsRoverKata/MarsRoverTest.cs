@@ -47,6 +47,7 @@ namespace MarsRoverKata
         }
         
         [TestCase("MMMMMMMMMMRM", "1:9:E")]
+        [TestCase("RMMMMMMMMMMLM", "9:1:N")]
         public void A04_EndOfTheGrid(string commands, string position)
         {
             AssertResultShouldReturn(commands, position);
