@@ -19,7 +19,7 @@
 | RRR | 0:0:W |
 | RRRR | 0:0:N |
 | MMMRM | 1:3:E |
-| MMMMRMMM | 2:4:E |
+| MMMMRMMM | 3:4:E |
 
 #### Turn Left
 | commands | position |
@@ -29,10 +29,11 @@
 | LLL | 0:0:E |
 | LLLL | 0:0:N |
 | RMMMLM | 3:1:N |
-| MRMMMMLMMMML | 4:5:E |
+| MRMMMMLMMMML | 4:5:W |
 
 ### End Of The Grid
 | commands | position |
 | :----: | :----: |
-| MMMMMMMMRM | 1:9:E |
-| RMMMMMMMMMLM | 9:1:N |
+| MMMMMMMMMMRM | 1:9:E |
+| RMMMMMMMMMMLM | 9:1:N |
+| MMMMMMLM | 0:6:W |
