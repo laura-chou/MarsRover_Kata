@@ -25,6 +25,10 @@ namespace MarsRoverKata.src
                 if (command == 'R')
                 {
                     position++;
+                    if (directions.Length - 1 < position)
+                    {
+                        position = 0;
+                    }
                 }
             }
             
