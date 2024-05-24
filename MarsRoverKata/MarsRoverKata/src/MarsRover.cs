@@ -22,6 +22,10 @@ namespace MarsRoverKata.src
                 {
                     y++;
                 }
+                if (command == 'M' && position == 1)
+                {
+                    x++;
+                }
                 if (command == 'R')
                 {
                     position++;
