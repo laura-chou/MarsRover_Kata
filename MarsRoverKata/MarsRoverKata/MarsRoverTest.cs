@@ -26,6 +26,7 @@ namespace MarsRoverKata
         [Test]
         [TestCase("R", "0:0:E")]
         [TestCase("RR", "0:0:S")]
+        [TestCase("RRR", "0:0:W")]
         public void A02_TurnRight(string commands, string position)
         {
             AssertResultShouldReturn(commands, position);
