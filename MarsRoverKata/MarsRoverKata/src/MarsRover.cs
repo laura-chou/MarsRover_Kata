@@ -34,6 +34,10 @@ namespace MarsRoverKata.src
                         position = 0;
                     }
                 }
+                if (command == 'L')
+                {
+                    position = directions.Length - 1;
+                }
             }
             
             return $"{x}:{y}:{directions[position]}";
