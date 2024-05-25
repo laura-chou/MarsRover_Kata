@@ -9,38 +9,57 @@ namespace MarsRoverKata.src
     public class MarsRover
     {
         private string[] directions = new string[] { "N", "E", "S", "W" };
+        private int position = 0;
+        private int x = 0;
+        private int y = 0;
         
         public string Execute(string commands)
         {
-            var position = 0;
-            var x = 0;
-            var y = 0;
-
             foreach (var command in commands)
             {
-                if (command == 'M' && position == 0)
+                if (command == 'M')
                 {
-                    y++;
+                    if (IsRoverPositionNorth())
+                    {
+                        y++;
+                    }
+                    else
+                    {
+                        x++;
+                    }
                 }
-                if (command == 'M' && position == 1)
-                {
-                    x++;
-                }
+
                 if (command == 'R')
                 {
-                    position++;
-                    if (directions.Length - 1 < position)
+                    if (IsRoverPositionWest())
                     {
                         position = 0;
+                    } 
+                    else
+                    {
+                        position++;
                     }
                 }
                 if (command == 'L')
                 {
-                    position = directions.Length - 1;
+                    if (IsRoverPositionNorth())
+                    {
+                        position = directions.Length - 1;
+                    }
                 }
             }
             
             return $"{x}:{y}:{directions[position]}";
+        }
+
+        private bool IsRoverPositionNorth()
+        {
+            return directions[position] == "N";
+        }
+
+        private bool IsRoverPositionWest()
+        {
+            return directions[position] == "W";
         }
     }
 }
