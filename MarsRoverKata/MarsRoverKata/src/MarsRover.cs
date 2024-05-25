@@ -46,6 +46,10 @@ namespace MarsRoverKata.src
                     {
                         position = directions.Length - 1;
                     }
+                    else
+                    {
+                        position--;
+                    }
                 }
             }
             
