@@ -23,7 +23,7 @@ namespace MarsRoverKata.src
                     case 'M':
                         _ = IsRoverPositionNorth()
                             ? grid.GetUpperBound(0) > y ? y++ : y
-                            : x++;
+                            : grid.GetUpperBound(1) > x ? x++ : x;
                         break;
 
                     case 'R':
