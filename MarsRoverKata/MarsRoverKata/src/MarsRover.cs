@@ -9,6 +9,7 @@ namespace MarsRoverKata.src
     public class MarsRover
     {
         private string[] directions = new string[] { "N", "E", "S", "W" };
+        private int[,] grid = new int[10,10];
         private int position = 0;
         private int x = 0;
         private int y = 0;
@@ -21,7 +22,7 @@ namespace MarsRoverKata.src
                 {
                     case 'M':
                         _ = IsRoverPositionNorth()
-                            ? y++
+                            ? grid.GetUpperBound(0) > y ? y++ : y
                             : x++;
                         break;
 
