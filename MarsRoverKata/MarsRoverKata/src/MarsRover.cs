@@ -17,39 +17,25 @@ namespace MarsRoverKata.src
         {
             foreach (var command in commands)
             {
-                if (command == 'M')
+                switch (command)
                 {
-                    if (IsRoverPositionNorth())
-                    {
-                        y++;
-                    }
-                    else
-                    {
-                        x++;
-                    }
-                }
+                    case 'M':
+                        _ = IsRoverPositionNorth()
+                            ? y++
+                            : x++;
+                        break;
 
-                if (command == 'R')
-                {
-                    if (IsRoverPositionWest())
-                    {
-                        position = 0;
-                    } 
-                    else
-                    {
-                        position++;
-                    }
-                }
-                if (command == 'L')
-                {
-                    if (IsRoverPositionNorth())
-                    {
-                        position = directions.Length - 1;
-                    }
-                    else
-                    {
-                        position--;
-                    }
+                    case 'R':
+                        position = IsRoverPositionWest()
+                            ? 0
+                            : position+=1;
+                        break;
+
+                    case 'L':
+                        position = IsRoverPositionNorth()
+                            ? directions.Length - 1
+                            : position-=1;
+                        break;
                 }
             }
             
