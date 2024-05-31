@@ -47,6 +47,13 @@ namespace MarsRoverKata
             AssertResultShouldReturn(commands, position);
         }
 
+        [Test]
+        [TestCase("MMMMMMMMMMRM", "1:9:E")]
+        public void A04_EndOfTheGrid(string commands, string position)
+        {
+            AssertResultShouldReturn(commands, position);
+        }
+
         private void AssertResultShouldReturn(string commands, string position)
         {
             var actual = _marsRover.Execute(commands);
