@@ -5,13 +5,14 @@
 - [TDD BUDDY](https://www.tddbuddy.com/katas/mars-rover.html)
 
 ### Test case
-#### Go Straight
+#### Rover Forward
 | commands | position |
 | :----: | :----: |
 | M | 0:1:N |
 | MMM | 0:3:N |
+| MMMMMMMMMM | 0:9:N |
 
-#### Turn Right
+#### Rover Turn Right And Forward
 | commands | position |
 | :----: | :----: |
 | R | 0:0:E |
@@ -19,21 +20,20 @@
 | RRR | 0:0:W |
 | RRRR | 0:0:N |
 | MMMRM | 1:3:E |
-| MMMMRMMM | 3:4:E |
+| RMMMMMMMMMM | 9:0:E |
 
-#### Turn Left
+#### Rover Turn Left And Forward
 | commands | position |
 | :----: | :----: |
 | L | 0:0:W |
 | LL | 0:0:S |
 | LLL | 0:0:E |
 | LLLL | 0:0:N |
-| RMMMLM | 3:1:N |
-| MRMMMMLMMMML | 4:5:W |
+| MMLM | 0:2:W |
 
-### End Of The Grid
+#### Rover Backward
 | commands | position |
 | :----: | :----: |
-| MMMMMMMMMMRM | 1:9:E |
-| RMMMMMMMMMMLM | 9:1:N |
-| MMMMMMLM | 0:6:W |
+| MRRM | 0:0:S |
+| MRRMM | 0:0:S |
+| MMMRMLLLM | 1:2:S |
