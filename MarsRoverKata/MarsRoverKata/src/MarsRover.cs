@@ -9,6 +9,7 @@ namespace MarsRoverKata.src
     public class MarsRover
     {
         private string[] directions = new string[] { "N", "E", "S", "W" };
+        private int[,] grid = new int[10, 10];
         public string Execute(string commands)
         {
             var x = 0;
@@ -20,7 +21,7 @@ namespace MarsRoverKata.src
                 switch (command)
                 {
                     case 'M':
-                        y++;
+                        _ = grid.GetUpperBound(0) > y ? y++ : y;
                         break;
                 }
             }
