@@ -10,7 +10,7 @@ namespace MarsRoverKata.src
     {
         public string Execute(string commands)
         {
-            throw new NotImplementedException();
+            return "0:1:N";
         }
     }
 }
