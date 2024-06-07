@@ -18,6 +18,7 @@ namespace MarsRoverKata
         [Test]
         [TestCase("M", "0:1:N")]
         [TestCase("MMM", "0:3:N")]
+        [TestCase("MMMMMMMMMM", "0:9:N")]
         public void A01_RoverForward(string commands, string position)
         {
             var actual = _marsRover.Execute(commands);
