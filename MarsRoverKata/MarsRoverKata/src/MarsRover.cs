@@ -21,17 +21,11 @@ namespace MarsRoverKata.src
                 switch (command)
                 {
                     case 'M':
-                        if (directions[position] == "E")
-                        {
-                            x++;
-                        } 
-                        else
-                        {
-                            _ = grid.GetUpperBound(0) > y ? y++ : y;
-                        }
-                        
+                        _ = IsRoverPositionEast(position)
+                            ? grid.GetUpperBound(1) > x ? x++ : x
+                            : grid.GetUpperBound(0) > y ? y++ : y;
                         break;
-                    
+
                     case 'R':
                         position++;
                         if (directions.Length - 1 < position)
@@ -43,6 +37,11 @@ namespace MarsRoverKata.src
             }
 
             return $"{x}:{y}:{directions[position]}";
+        }
+
+        private bool IsRoverPositionEast(int position)
+        {
+            return directions[position] == "E";
         }
     }
 }
