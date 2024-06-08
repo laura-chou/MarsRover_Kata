@@ -21,6 +21,18 @@ namespace MarsRoverKata
         [TestCase("MMMMMMMMMM", "0:9:N")]
         public void A01_RoverForward(string commands, string position)
         {
+            AssertResultShouldReturn(commands, position);
+        }
+        
+        [Test]
+        [TestCase("R", "0:0:E")]
+        public void A02_RoverTurnRightAndForward(string commands, string position)
+        {
+            AssertResultShouldReturn(commands, position);
+        }
+
+        private void AssertResultShouldReturn(string commands, string position)
+        {
             var actual = _marsRover.Execute(commands);
             actual.Should().Be(position);
         }
