@@ -21,7 +21,15 @@ namespace MarsRoverKata.src
                 switch (command)
                 {
                     case 'M':
-                        _ = grid.GetUpperBound(0) > y ? y++ : y;
+                        if (directions[position] == "E")
+                        {
+                            x++;
+                        } 
+                        else
+                        {
+                            _ = grid.GetUpperBound(0) > y ? y++ : y;
+                        }
+                        
                         break;
                     
                     case 'R':
