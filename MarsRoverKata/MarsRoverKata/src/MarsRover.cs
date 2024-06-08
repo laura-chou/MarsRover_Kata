@@ -23,6 +23,10 @@ namespace MarsRoverKata.src
                     case 'M':
                         _ = grid.GetUpperBound(0) > y ? y++ : y;
                         break;
+                    
+                    case 'R':
+                        position++;
+                        break;
                 }
             }
 
