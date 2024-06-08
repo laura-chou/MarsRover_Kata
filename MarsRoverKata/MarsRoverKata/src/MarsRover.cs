@@ -26,6 +26,10 @@ namespace MarsRoverKata.src
                     
                     case 'R':
                         position++;
+                        if (directions.Length - 1 < position)
+                        {
+                            position = 0;
+                        }
                         break;
                 }
             }
