@@ -40,6 +40,10 @@ namespace MarsRoverKata.src
                         {
                             position = directionsMaxIndex;
                         }
+                        else
+                        {
+                            position--;
+                        }
                         break;
                 }
             }
