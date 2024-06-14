@@ -33,6 +33,13 @@ namespace MarsRoverKata.src
                             position = 0;
                         }
                         break;
+
+                    case 'L':
+                        if (directions[position] == "N")
+                        {
+                            position = directions.Length - 1;
+                        }
+                        break;
                 }
             }
 
