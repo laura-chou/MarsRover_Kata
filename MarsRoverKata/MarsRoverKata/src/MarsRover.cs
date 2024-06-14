@@ -25,7 +25,7 @@ namespace MarsRoverKata.src
                         _ = IsRoverPositionEast(position)
                             ? grid.GetUpperBound(1) > x ? x++ : x
                             : grid.GetUpperBound(0) > y && !IsRoverPositionWest(position) && !IsRoverPositionSouth(position) ? y++ : y;
-                        if (IsRoverPositionSouth(position))
+                        if (IsRoverPositionSouth(position) && y > 0)
                         {
                             y--;
                         }
