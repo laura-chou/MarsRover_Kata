@@ -47,6 +47,13 @@ namespace MarsRoverKata
             AssertResultShouldReturn(commands, position);
         }
 
+        [Test]
+        [TestCase("MRRM", "0:0:S")]
+        public void A04_RoverBackward(string commands, string position)
+        {
+            AssertResultShouldReturn(commands, position);
+        }
+
         private void AssertResultShouldReturn(string commands, string position)
         {
             var actual = _marsRover.Execute(commands);
