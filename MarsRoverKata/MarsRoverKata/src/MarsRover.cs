@@ -10,6 +10,7 @@ namespace MarsRoverKata.src
     {
         private string[] directions = new string[] { "N", "E", "S", "W" };
         private int[,] grid = new int[10, 10];
+        private int directionsMaxIndex => directions.Length - 1;
         public string Execute(string commands)
         {
             var x = 0;
@@ -28,22 +29,27 @@ namespace MarsRoverKata.src
 
                     case 'R':
                         position++;
-                        if (directions.Length - 1 < position)
+                        if (directionsMaxIndex < position)
                         {
                             position = 0;
                         }
                         break;
 
                     case 'L':
-                        if (directions[position] == "N")
+                        if (IsRoverPositionNorth(position))
                         {
-                            position = directions.Length - 1;
+                            position = directionsMaxIndex;
                         }
                         break;
                 }
             }
 
             return $"{x}:{y}:{directions[position]}";
+        }
+
+        private bool IsRoverPositionNorth(int position)
+        {
+            return directions[position] == "N";
         }
 
         private bool IsRoverPositionEast(int position)
