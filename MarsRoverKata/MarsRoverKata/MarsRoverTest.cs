@@ -50,6 +50,7 @@ namespace MarsRoverKata
         [Test]
         [TestCase("MRRM", "0:0:S")]
         [TestCase("MRRMM", "0:0:S")]
+        [TestCase("MMMRMLLLM", "1:2:S")]
         public void A04_RoverBackward(string commands, string position)
         {
             AssertResultShouldReturn(commands, position);
