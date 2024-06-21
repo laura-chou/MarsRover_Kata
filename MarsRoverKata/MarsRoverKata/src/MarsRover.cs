@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,31 +23,25 @@ namespace MarsRoverKata.src
                 {
                     case 'M':
                         _ = IsRoverPositionEast(position)
-                            ? grid.GetUpperBound(1) > x ? x++ : x
-                            : grid.GetUpperBound(0) > y && !IsRoverPositionWest(position) && !IsRoverPositionSouth(position) ? y++ : y;
-                        if (IsRoverPositionSouth(position) && y > 0)
+                            ? IsRoverForwardXAsix(x) ? x++ : x
+                            : IsRoverForwardYAsix(y, position) ? y++ : y;
+
+                        if (IsRoverBackward(y, position))
                         {
                             y--;
                         }
                         break;
 
                     case 'R':
-                        position++;
-                        if (directionsMaxIndex < position)
-                        {
-                            position = 0;
-                        }
+                        position = directionsMaxIndex > position
+                                ? position + 1
+                                : 0;
                         break;
 
                     case 'L':
-                        if (IsRoverPositionNorth(position))
-                        {
-                            position = directionsMaxIndex;
-                        }
-                        else
-                        {
-                            position--;
-                        }
+                        position = IsRoverPositionNorth(position)
+                            ? directionsMaxIndex
+                            : position - 1;
                         break;
                 }
             }
@@ -55,9 +49,32 @@ namespace MarsRoverKata.src
             return $"{x}:{y}:{directions[position]}";
         }
 
-        private bool IsRoverPositionNorth(int position)
+        private bool IsAroundTheEndOfGrid(string asix, int number)
         {
-            return directions[position] == "N";
+            var asixMapper = new Dictionary<string, int>
+            {
+                { "y", grid.GetUpperBound(0) },
+                { "x", grid.GetUpperBound(1) }
+            };
+
+            return number != asixMapper[asix] || number == 0;
+        }
+
+        private bool IsRoverBackward(int y, int position)
+        {
+            return IsRoverPositionSouth(position) && y > 0;
+        }
+
+        private bool IsRoverForwardXAsix(int x)
+        {
+            return IsAroundTheEndOfGrid("x", x);
+        }
+
+        private bool IsRoverForwardYAsix(int y, int position)
+        {
+            return IsAroundTheEndOfGrid("y", y) && 
+                !IsRoverPositionWest(position) && 
+                !IsRoverPositionSouth(position);
         }
 
         private bool IsRoverPositionEast(int position)
@@ -65,14 +82,19 @@ namespace MarsRoverKata.src
             return directions[position] == "E";
         }
 
-        private bool IsRoverPositionWest(int position)
+        private bool IsRoverPositionNorth(int position)
         {
-            return directions[position] == "W";
+            return directions[position] == "N";
         }
 
         private bool IsRoverPositionSouth(int position)
         {
             return directions[position] == "S";
+        }
+
+        private bool IsRoverPositionWest(int position)
+        {
+            return directions[position] == "W";
         }
     }
 }
